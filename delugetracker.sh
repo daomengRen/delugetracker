@@ -4,7 +4,7 @@ torrentid=$1
 torrentname=$2
 torrentpath=$3
 x=1
-ddport=13206
+ddport=13206 #delude的端口
 
 while [ $x -le 100000 ]
 do
