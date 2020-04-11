@@ -15,7 +15,7 @@ echo "TorrentID: $torrentid" >> ~/script.log
 line=$(deluge-console "connect 127.0.0.1:$ddport; info" $1 | grep "Tracker status")
 echo $line >> ~/script.log
 case "$line" in
-*unregistered*|*End*of*file*|*Bad*Gateway*|*error*|*Error*)
+*unregistered*|*End*of*file*|*Bad*Gateway*|*error*|*Error*|*Sent*)
 deluge-console "connect 127.0.0.1:$ddport; pause '$torrentid'"
 sleep 2
 deluge-console "connect 127.0.0.1:$ddport; resume '$torrentid'"
